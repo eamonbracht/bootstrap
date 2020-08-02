@@ -6,7 +6,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./dom/data.js'), require('./dom/event-handler.js')) :
   typeof define === 'function' && define.amd ? define(['./dom/data.js', './dom/event-handler.js'], factory) :
-  (global = global || self, global.Alert = factory(global.Data, global.EventHandler));
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Alert = factory(global.Data, global.EventHandler));
 }(this, (function (Data, EventHandler) { 'use strict';
 
   Data = Data && Object.prototype.hasOwnProperty.call(Data, 'default') ? Data['default'] : Data;
@@ -134,11 +134,7 @@
 
     // Public
     _proto.close = function close(element) {
-      var rootElement = this._element;
-
-      if (element) {
-        rootElement = this._getRootElement(element);
-      }
+      var rootElement = element ? this._getRootElement(element) : this._element;
 
       var customEvent = this._triggerCloseEvent(rootElement);
 
