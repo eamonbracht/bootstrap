@@ -31,6 +31,12 @@
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-font-sans-serif);
@@ -4559,6 +4565,46 @@ fieldset:disabled .btn {
 .btn .badge {
   position: relative;
   top: -1px;
+}
+
+.badge-primary {
+  color: #fff;
+  background-color: #0d6efd;
+}
+
+.badge-secondary {
+  color: #fff;
+  background-color: #6c757d;
+}
+
+.badge-success {
+  color: #fff;
+  background-color: #198754;
+}
+
+.badge-info {
+  color: #000;
+  background-color: #0dcaf0;
+}
+
+.badge-warning {
+  color: #000;
+  background-color: #ffc107;
+}
+
+.badge-danger {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+.badge-light {
+  color: #000;
+  background-color: #f8f9fa;
+}
+
+.badge-dark {
+  color: #fff;
+  background-color: #343a40;
 }
 
 .alert {
