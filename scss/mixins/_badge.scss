@@ -2,8 +2,9 @@
     $bg,
     $color: color-contrast($bg)
 ) {
-    color: $color;
     background-color: $bg;
+    color: $color;
+    
     // @include gradient-bg($background);
   
     // @at-root a#{&} {
